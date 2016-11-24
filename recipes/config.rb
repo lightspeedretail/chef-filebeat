@@ -43,7 +43,7 @@ prospectors.each do |prospector, configuration|
   end
 end
 
-powershell 'install filebeat as service' do
+powershell_script 'install filebeat as service' do
   code "#{node['filebeat']['windows']['base_dir']}/filebeat-#{node['filebeat']['version']}-windows/install-service-filebeat.ps1"
   only_if { node['platform'] == 'windows' }
 end
