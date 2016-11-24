@@ -1,4 +1,4 @@
-default['filebeat']['version'] = '1.2.1'
+default['filebeat']['version'] = '5.0.1'
 default['filebeat']['disable_service'] = false
 default['filebeat']['package_url'] = 'auto'
 
@@ -19,19 +19,19 @@ default['filebeat']['prospectors_dir'] = if node['platform'] == 'windows'
                                          else
                                            ::File.join(node['filebeat']['conf_dir'], 'conf.d')
                                          end
-default['filebeat']['yum']['baseurl'] = 'https://packages.elastic.co/beats/yum/el/$basearch'
+default['filebeat']['yum']['baseurl'] = 'https://artifacts.elastic.co/packages/5.x/yum'
 default['filebeat']['yum']['description'] = 'Elastic Beats Repository'
 default['filebeat']['yum']['gpgcheck'] = true
 default['filebeat']['yum']['enabled'] = true
-default['filebeat']['yum']['gpgkey'] = 'https://packages.elasticsearch.org/GPG-KEY-elasticsearch'
+default['filebeat']['yum']['gpgkey'] = 'https://packages.elastic.co/GPG-KEY-elasticsearch'
 default['filebeat']['yum']['metadata_expire'] = '3h'
 default['filebeat']['yum']['action'] = :create
 
-default['filebeat']['apt']['uri'] = 'https://packages.elastic.co/beats/apt'
+default['filebeat']['apt']['uri'] = 'https://artifacts.elastic.co/packages/5.x/apt'
 default['filebeat']['apt']['description'] = 'Elastic Beats Repository'
 default['filebeat']['apt']['components'] = %w(stable main)
 default['filebeat']['apt']['distribution'] = ''
 # apt package install options
 default['filebeat']['apt']['options'] = "-o Dpkg::Options::='--force-confnew'"
 default['filebeat']['apt']['action'] = :add
-default['filebeat']['apt']['key'] = 'https://packages.elasticsearch.org/GPG-KEY-elasticsearch'
+default['filebeat']['apt']['key'] = 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'

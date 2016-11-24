@@ -3,6 +3,12 @@ filebeat CHANGELOG
 
 This file is used to list changes made in each version of the filebeat cookbook.
 
+
+9999.4.0
+-----
+- CIS-1165 Upgrade to filebeat 5
+
+
 0.3.1
 -----
 
